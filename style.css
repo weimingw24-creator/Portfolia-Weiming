@@ -1,0 +1,167 @@
+/* Mobile-first styles. Colors come from CSS variables set in script.js from content.js. */
+
+:root {
+  --bg: #fbfbfd;
+  --surface: #ffffff;
+  --text: #1b1b24;
+  --muted: #5d5d6e;
+  --border: #e4e4ec;
+  --accent: #2b7de9;
+  --accent-text: #1b5fc2; /* accent adjusted to be readable as text */
+  --on-accent: #ffffff; /* text color on top of accent */
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+:root[data-mode="dark"] {
+  --bg: #111118;
+  --surface: #1a1a24;
+  --text: #f1f1f7;
+  --muted: #a3a3b5;
+  --border: #2a2a38;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+
+main { max-width: 720px; margin: 0 auto; padding: 56px 20px 64px; }
+
+/* Layout-specific files (techy.css, fancy.css) take over the full width. */
+body.style-techy main, body.style-fancy main { max-width: none; padding: 0; }
+
+/* ---------- Hero ---------- */
+.hero { text-align: center; }
+
+.avatar-wrap {
+  position: relative;
+  width: 156px;
+  height: 156px;
+  margin: 0 auto 20px;
+}
+.avatar-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: rotate(-8deg) translate(6px, 4px);
+  opacity: 0.9;
+}
+.avatar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  background: var(--surface);
+  border: 4px solid var(--bg);
+}
+.avatar.is-initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+h1 { font-size: 2.1rem; line-height: 1.15; margin: 0 0 6px; }
+.tagline { margin: 0 0 18px; color: var(--muted); font-size: 1.05rem; }
+.mission { margin: 0 auto 22px; max-width: 34rem; font-size: 1.1rem; }
+
+.links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.12s ease;
+}
+.btn:hover, .btn:focus-visible { transform: translateY(-2px); }
+
+/* ---------- Sections ---------- */
+section { margin-top: 44px; }
+h2 {
+  font-size: 1.25rem;
+  margin: 0 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+h2::before {
+  content: "";
+  width: 22px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; list-style: none; }
+.chip {
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 0.9rem;
+}
+.chip.tag { font-size: 0.8rem; padding: 2px 10px; color: var(--accent-text); border-color: var(--accent); background: transparent; }
+
+.cards { display: grid; gap: 14px; }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+.card h3 { margin: 0; font-size: 1.05rem; }
+.card h3 a { color: var(--accent-text); text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card .meta { margin: 2px 0 6px; color: var(--muted); font-size: 0.9rem; }
+.card p { margin: 6px 0 0; }
+.card .chips { margin-top: 10px; }
+
+/* ---------- Toggle & error ---------- */
+.mode-toggle {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.error {
+  margin: 16px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: #fde8e8;
+  color: #8a1c1c;
+  border: 1px solid #f3b4b4;
+  font-family: system-ui, sans-serif;
+}
+
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+@media (min-width: 640px) {
+  main { padding-top: 88px; }
+  h1 { font-size: 2.8rem; }
+  .avatar-wrap { width: 184px; height: 184px; }
+}

@@ -1,0 +1,147 @@
+/* Styles for the "techy" layout (see layout-techy.js). Always dark, always monospace. */
+
+body.style-techy {
+  --bg: #07090d;
+  --surface: #0d1117;
+  --text: #d6e2ee;
+  --muted: #7a8ea3;
+  --border: #1d2733;
+  background: var(--bg);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+body.style-techy .mode-toggle { display: none; }
+
+.t-root {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 22px 80px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+/* ----- header ----- */
+.t-head { display: flex; flex-direction: column; gap: 22px; }
+.t-photo { position: relative; width: 148px; height: 148px; padding: 8px; flex: none; }
+.t-photo::before, .t-photo::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 2px solid var(--accent);
+}
+.t-photo::before { top: 0; left: 0; border-right: 0; border-bottom: 0; }
+.t-photo::after { bottom: 0; right: 0; border-left: 0; border-top: 0; }
+.t-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  box-shadow: 0 0 36px -8px var(--accent);
+}
+.t-img.is-initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 2.6rem;
+  font-weight: 800;
+}
+.t-id p { margin: 0; }
+.t-path { font-size: 0.85rem; color: var(--muted); }
+.t-root h1 {
+  margin: 2px 0 6px;
+  font-size: clamp(1.9rem, 8vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-shadow: 0 0 22px color-mix(in srgb, var(--accent) 70%, transparent);
+}
+.t-tagline { color: var(--muted); }
+.t-mission { margin: 24px 0 18px; padding-left: 14px; border-left: 2px solid var(--accent); }
+
+.t-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.t-links a {
+  color: var(--accent-text);
+  text-decoration: none;
+  padding: 6px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  transition: 0.15s;
+}
+.t-links a:hover { background: var(--accent); color: var(--on-accent); box-shadow: 0 0 18px var(--accent); }
+
+/* ----- tabs ----- */
+.t-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 44px; }
+.t-tab {
+  font: inherit;
+  cursor: pointer;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--muted);
+  transition: 0.15s;
+}
+.t-tab:hover { color: #fff; border-color: var(--muted); }
+.t-tab.on {
+  color: #fff;
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 18%, var(--surface));
+  box-shadow: 0 0 20px -6px var(--accent);
+}
+
+/* ----- panel ----- */
+.t-panel {
+  margin-top: 12px;
+  min-height: 280px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--accent) 50%, var(--border));
+  border-radius: 12px;
+  background: rgba(13, 17, 23, 0.85);
+  box-shadow: 0 0 40px -18px var(--accent);
+}
+.t-panel-head {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: #0a0e14;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.t-panel-head span:first-child { color: var(--accent-text); }
+
+.t-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 16px;
+  border-top: 1px solid var(--border);
+  border-left: 3px solid transparent;
+  transition: 0.15s;
+}
+.t-entry:first-child { border-top: 0; }
+.t-entry:hover { border-left-color: var(--accent); background: rgba(255, 255, 255, 0.025); }
+.t-title { color: #fff; font-weight: 700; font-size: 1.02rem; text-decoration: none; }
+a.t-title:hover { color: var(--accent-text); }
+.t-meta { color: var(--muted); }
+.t-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+.t-tags em { font-style: normal; color: var(--accent-text); font-size: 0.85rem; }
+
+.t-chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 16px; }
+.t-chips span { padding: 4px 12px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: #9fd3ff; }
+
+a:focus-visible, button:focus-visible { outline-color: var(--accent); }
+
+@media (min-width: 640px) {
+  .t-root { padding-top: 72px; }
+  .t-head { flex-direction: row; align-items: center; gap: 28px; }
+  .t-photo { width: 172px; height: 172px; }
+}
