@@ -1,110 +1,124 @@
 // ============================================================
-//  YOUR PORTFOLIO CONTENT  —  this is the ONLY file you need to edit.
-//
-//  Rules of the road:
-//   • Keep the quotes "like this" around every piece of text.
-//   • Keep the commas at the end of each line.
-//   • If your text contains a double quote, write it as \"  (or use 'single quotes').
-//   • To remove an optional section, set it to an empty list:  []
-//   • Save the file and refresh index.html to see your changes.
-//   • If the page shows a red error box, you probably deleted a quote or comma.
+//  PORTFOLIO CONTENT — Weiming Wang
+//  Replace your template's content.js with this file, keep assets/photo.jpg.
 // ============================================================
 
 const content = {
   // ---------- About you ----------
-  name: "Percy Portfolio",
-  tagline: "Aspiring software developer & professional thumbs-up giver 👍", // one line under your name
+  name: "Weiming Wang",
+  tagline: "Computer Science @ Conestoga College · seeking a Summer 2027 software engineering internship",
 
-  // Put your photo in the assets/ folder and put its file name here.
-  // Square-ish, about 600px wide, under 1 MB works best.
-  photo: "assets/photo.jpg",
+  // Drop a square-ish photo (about 600px wide, under 1 MB) into assets/.
+  photo: "assets/Weiming.jpg",
 
-  // 1–3 sentences: what you care about and what you're looking for.
   mission:
-    "I build friendly, useful software and I'm looking for a co-op where I can learn fast, ship real features, and work with people who love teaching.",
+    "I'm a Computer Science student in Waterloo who likes code that holds up under testing — bill-splitting and calendar programs written in C# and C, with unit tests, clear models and no loose ends. I'm looking for a Summer 2027 software engineering internship where I can ship real features and learn from a team that reviews code honestly.",
 
   // ---------- Make it yours ----------
   theme: {
-    // Pick a look:
-    //   "classic" = clean and friendly (the default)
-    //   "techy"   = dark terminal vibes, one tab per section (always dark, always monospace)
-    //   "fancy"   = big serif headings, an arched photo, swipeable project cards
+    // "classic" = clean and friendly · "techy" = dark terminal · "fancy" = big serif, arched photo
     style: "classic",
 
-    // Pick a preset: "coral", "ocean", "grape", "forest", "sunset", "bubblegum"
-    // ...or use any hex color like "#ff6b9d".
-    accent: "ocean",
+    // Presets: "coral", "ocean", "grape", "forest", "sunset", "bubblegum" — or any hex color.
+    accent: "#1f6feb",
 
-    // Pick a font: "modern", "serif", "rounded", "mono"
+    // "modern", "serif", "rounded", "mono"
     font: "modern",
 
-    // "auto" follows the visitor's device. You can also force "light" or "dark".
-    // (The "techy" look is always dark.)
+    // "auto" follows the visitor's device; you can force "light" or "dark".
     mode: "auto",
   },
 
-  // ---------- Links (shown as buttons at the top) ----------
-  // For email just write the address, e.g. "you@example.com".
+  // ---------- Links ----------
   links: [
-    { label: "GitHub", url: "https://github.com/your-username" },
-    { label: "LinkedIn", url: "https://www.linkedin.com/in/your-name" },
-    { label: "Email", url: "percy@example.com" },
+    { label: "GitHub", url: "https://github.com/weimingw24-creator" },
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/weiming-wang-56b21a2a5" },
+    { label: "Email", url: "wwang4570@conestogac.on.ca" },
   ],
 
-  // ---------- Skills (optional — set to [] to hide) ----------
-  skills: ["JavaScript", "Python", "HTML & CSS", "Git", "Java", "SQL"],
+  // ---------- Skills ----------
+  skills: [
+    "C#",
+    "C",
+    "C++",
+    "Python",
+    "JavaScript",
+    "HTML & CSS",
+    "MySQL",
+    "Git & GitHub",
+    "Data Structures & Algorithms",
+    "Object-Oriented Programming",
+  ],
 
   // ---------- Projects ----------
-  // Link to the GitHub repo (a live demo is optional — a repo is enough!).
-  // tags are optional.
+  // Swap the url for the real repo link once each project has one.
   projects: [
     {
-      title: "Study Buddy",
-      description: "A web app that matches classmates into study groups based on courses and schedules.",
-      url: "https://github.com/your-username/study-buddy",
-      tags: ["JavaScript", "Node.js"],
+      title: "Lunch Split System",
+      description:
+        "Bill splitter built in C# on .NET 8 with MVC. Models Bill, Attendee and Share as immutable records, handles tips and weighted shares, and reconciles pennies so the shares always add up to the grand total — covered by 27 MSTest unit tests.",
+      url: "https://github.com/weimingw24-creator",
+      tags: ["C#", ".NET 8", "MSTest", "TDD"],
     },
     {
-      title: "Campus Eats",
-      description: "A command-line tool that picks where to eat on campus using a very scientific coin flip.",
-      url: "https://github.com/your-username/campus-eats",
-      tags: ["Python"],
+      title: "Calendar System",
+      description:
+        "C program for events and reminders. Full CRUD with date validation, a file-based store so data survives between sessions, a fixed-size array capped at 200 events, and a built-in test suite for add, update, delete, save and load.",
+      url: "https://github.com/weimingw24-creator",
+      tags: ["C", "File I/O", "Testing"],
     },
     {
-      title: "Habit Tracker",
-      description: "A tiny mobile-friendly habit tracker that works offline.",
-      url: "https://github.com/your-username/habit-tracker",
-      tags: ["HTML", "CSS", "JavaScript"],
+      title: "Autonomous Vehicle Research",
+      description:
+        "Independent November 2024 study of hybrid frameworks that pair deep neural networks with dynamic system theory for driving, combining data-driven learning with model-based control to improve vehicle state estimation and trajectory tracking.",
+      url: "https://github.com/weimingw24-creator",
+      tags: ["Deep Learning", "Control Systems", "Research"],
     },
   ],
 
   // ---------- Education ----------
   education: [
     {
-      school: "Example College",
-      degree: "Diploma, Computer Programming",
-      years: "2024 – 2027",
-      details: "Relevant courses: Data Structures, Databases, Web Development.", // optional
+      school: "Conestoga College",
+      degree: "Bachelor of Computer Science",
+      years: "Sep 2025 – Spring 2028 (expected)",
+      details:
+        "Relevant courses: Database Systems, Software Development Life Cycle, System Analysis & Design, Object-Oriented Programming, Computer Networks.",
+    },
+    {
+      school: "St. Joseph College School, Toronto",
+      degree: "Ontario Secondary School Diploma (OSSD)",
+      years: "Sep 2021 – Jun 2025",
+      details: "Five years studying in Canada.",
     },
   ],
 
-  // ---------- Work experience (optional — set to [] to hide) ----------
+  // ---------- Work experience ----------
   experience: [
     {
-      role: "Peer Tutor",
-      org: "Example College Learning Centre",
-      years: "2025 – present",
-      description: "Help first-year students debug their programming assignments.",
+      role: "IT Club",
+      org: "Conestoga College",
+      years: "Sep 2026 – present",
+      description:
+        "Take part in campus tech workshops and peer tech support alongside coursework in software development.",
+    },
+    {
+      role: "Research Project",
+      org: "Deep Neural Networks & Dynamic Systems for Autonomous Vehicles",
+      years: "Nov 2024",
+      description:
+        "Studied hybrid DNN / dynamic-system frameworks for autonomous driving, pairing data-driven learning with model-based control to improve state estimation and trajectory tracking.",
+    },
+    {
+      role: "Bookkeeper",
+      org: "St. Joseph College School",
+      years: "Apr 2023 – Jun 2023",
+      description:
+        "Maintained bookkeeping records and reconciled accounts; kept entries accurate and on time.",
     },
   ],
 
-  // ---------- Extracurriculars (optional — set to [] to hide) ----------
-  extracurriculars: [
-    {
-      role: "Executive Lead",
-      org: "Google Developer Group on Campus",
-      years: "2025 – present",
-      description: "Run workshops and events for student developers.",
-    },
-  ],
+  // ---------- Extracurriculars ----------
+  // IT Club is already listed under experience, so this stays hidden.
+  extracurriculars: [],
 };
